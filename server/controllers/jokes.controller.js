@@ -17,6 +17,13 @@ const getJokeById = (req, res) => {
       .catch((err) => console.log(err));
 };
 
+// ANOTHER WAY TO WRITE THE ABOVE PER CLASS. Can do this and then you do not need to export each piece like on line 55 
+// module.exports.findOneJoke = (req,res) =>{
+//   Joke.findOne({_id: req.params.id})
+//     .then((oneJoke) => res.json(oneJoke))
+//     .catch((err) => req.json({message: "Something went wrong", error:err}));
+// }
+
 
 //CREATE 
 const createJoke = (req, res) => {
@@ -25,6 +32,12 @@ const createJoke = (req, res) => {
       .then((newJoke) => res.json(newJoke))
       .catch((err) => console.log(err));
 };
+
+// module.exports.createJoke = (req, res) => {
+//   Joke.create(req.body)
+//     .then{(newJoke) => res.json(newJoke)}
+//     .catch((err) res.jsoin({message: "Something ewent wrong", error:err}));
+// }
 
 
 //UPDATE 
